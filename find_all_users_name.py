@@ -19,7 +19,7 @@ def find_all_users_name(data: dict)->list:
         #     user=item.get("from")
         #     all_users_name.append(user)
         
-    return list(set(all_users_name))
+    return list(all_users_name)
     
 
 data=open("data/result.json",'r', encoding="UTF8").read()
