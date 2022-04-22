@@ -22,7 +22,7 @@ def find_all_users_name(data: dict)->list:
     return list(all_users_name)
     
 
-
+ 
 data=open("data/result.json",'r', encoding="UTF8").read()
 data=json.loads(data) 
 print(find_all_users_name(data)) 
