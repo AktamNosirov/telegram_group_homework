@@ -14,12 +14,12 @@ def find_all_users_id(data: dict)->list:
     foydalanuvchilar_id_raqamlari=[]
     foydalanuvchilar=data["messages"]
     for foydalanuvchi in foydalanuvchilar:
-       
-        foydalanuvchi_id_raqami=foydalanuvchi["id"]
-        foydalanuvchilar_id_raqamlari.append(foydalanuvchi_id_raqami)
-        # else:
-        #     foydalanuvchi_id_raqami=foydalanuvchi["actor_id"]
-        #     foydalanuvchilar_id_raqamlari.append(foydalanuvchi_id_raqami)
+        if foydalanuvchi.get("from_id"):
+            foydalanuvchi_id_raqami=foydalanuvchi["from_id"]
+            foydalanuvchilar_id_raqamlari.append(foydalanuvchi_id_raqami)
+        else:
+            foydalanuvchi_id_raqami=foydalanuvchi["actor_id"]
+            foydalanuvchilar_id_raqamlari.append(foydalanuvchi_id_raqami)
     
     
     return list(set(foydalanuvchilar_id_raqamlari))
