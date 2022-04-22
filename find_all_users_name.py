@@ -12,9 +12,13 @@ def find_all_users_name(data: dict)->list:
     all_users_name=[]
     items=data["messages"]
     for item in items :
-        user=item.get("actor")
-        all_users_name.append(user)
-      
+        if item.get("actor") :
+            user=item.get("actor")
+            all_users_name.append(user)
+        if item.get("from") :
+            user=item.get("from")
+            all_users_name.append(user)
+        
     return list(set(all_users_name))
    
 
