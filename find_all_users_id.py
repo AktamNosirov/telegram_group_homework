@@ -1,5 +1,3 @@
-from read_data import read_data
-from pprint import pprint 
 import json
 def find_all_users_id(data: dict)->list:
     """ 
@@ -17,13 +15,14 @@ def find_all_users_id(data: dict)->list:
         if foydalanuvchi.get("from_id", False):
             foydalanuvchi_id_raqami=foydalanuvchi["from_id"]
             foydalanuvchilar_id_raqamlari.append(foydalanuvchi_id_raqami)
-        # else:
-        #     foydalanuvchi_id_raqami=foydalanuvchi["actor_id"]
-        #     foydalanuvchilar_id_raqamlari.append(foydalanuvchi_id_raqami)
+        else:
+            foydalanuvchi_id_raqami=foydalanuvchi["actor_id"]
+            foydalanuvchilar_id_raqamlari.append(foydalanuvchi_id_raqami)
     
     
     return list(set(foydalanuvchilar_id_raqamlari))
    
+data=open("data/result.json",'r', encoding="UTF8").read()
+data=json.loads(data) 
 
-
-pprint(find_all_users_id(read_data("data/result.json"))) 
+print(find_all_users_id(data)) 
