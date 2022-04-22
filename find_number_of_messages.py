@@ -10,16 +10,18 @@ def find_number_of_messages(data: dict)->int:
         int: Total number of messages.
     
     """
-    find_number_of_messages=[]
+    
     items=data["messages"]
     n=0
     for item in items :
         if item.get("text"):
             n+=1
             
-    return n
+    return int(n)
 
 data=open("data/result.json",'r', encoding="UTF8").read()
 data=json.loads(data) 
 print(find_number_of_messages(data))   
+
+
    
