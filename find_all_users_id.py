@@ -19,7 +19,7 @@ def find_all_users_id(data: dict)->list:
             foydalanuvchilar_id_raqamlari.append(foydalanuvchi_id_raqami)
     
     
-    return foydalanuvchilar_id_raqamlari
+    return set(foydalanuvchilar_id_raqamlari)
    
 
 
