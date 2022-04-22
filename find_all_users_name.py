@@ -10,3 +10,4 @@ def find_all_users_name(data: dict)->list:
         list: List containing all the users name.
     """
     return
+

@@ -19,8 +19,7 @@ def find_all_users_id(data: dict)->list:
     
     
     return foydalanuvchilar_id_raqamlari
+   
 
-data=open("data\result.json")
-data.read()
-data=json.loads(data)
-pprint(find_all_users_id(data))
+
+pprint(find_all_users_id(read_data("data/result.json"))) 
