@@ -13,15 +13,15 @@ def find_all_users_id(data: dict)->list:
     foydalanuvchilar=data["messages"]
     
     for foydalanuvchi in foydalanuvchilar:
-        # if foydalanuvchi.get("from_id") and foydalanuvchi["from_id"] not in foydalanuvchilar_id_raqamlari: 
-        #     foydalanuvchi_id_raqami=foydalanuvchi["from_id"]
-        #     foydalanuvchilar_id_raqamlari.append(foydalanuvchi_id_raqami)
-        if foydalanuvchi.get("actor_id") and foydalanuvchi["actor_id"] not in foydalanuvchilar_id_raqamlari:   
-            foydalanuvchi_id_raqami=foydalanuvchi["actor_id"]
+        if foydalanuvchi.get("from_id") and foydalanuvchi["from_id"] not in foydalanuvchilar_id_raqamlari: 
+            foydalanuvchi_id_raqami=foydalanuvchi["from_id"]
             foydalanuvchilar_id_raqamlari.append(foydalanuvchi_id_raqami)
+        # if foydalanuvchi.get("actor_id") and foydalanuvchi["actor_id"] not in foydalanuvchilar_id_raqamlari:   
+        #     foydalanuvchi_id_raqami=foydalanuvchi["actor_id"]
+        #     foydalanuvchilar_id_raqamlari.append(foydalanuvchi_id_raqami)
     
     
-    return foydalanuvchilar_id_raqamlari
+    return list(set(foydalanuvchilar_id_raqamlari))
    
 data=open("data/result.json",'r', encoding="UTF8").read()
 data=json.loads(data) 
