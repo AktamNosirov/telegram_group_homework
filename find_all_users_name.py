@@ -15,9 +15,9 @@ def find_all_users_name(data: dict)->list:
         if item.get("actor") and item.get("actor") not in all_users_name:
             user=item.get("actor")
             all_users_name.append(user)
-        # if item.get("from") :
-        #     user=item.get("from")
-        #     all_users_name.append(user)
+        if item.get("from") and item.get("from") not in all_users_name:
+            user=item.get("from")
+            all_users_name.append(user)
         
     return list(all_users_name)
     
