@@ -12,7 +12,7 @@ def find_all_users_name(data: dict)->list:
     all_users_name=[]
     items=data["messages"]
     for item in items :
-        if item.get("actor") :
+        if item.get("actor") and item.get("actor") not in all_users_name:
             user=item.get("actor")
             all_users_name.append(user)
         # if item.get("from") :
